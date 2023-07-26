@@ -1,5 +1,7 @@
 <?php 
+if( !isset($_SESSION)){
     session_start();
+}
     // $con = new control();
     // $product_cate = 0;
     // $idtemp = null;
