@@ -262,3 +262,35 @@ a{
 }
 
 /* End CSS product*/
+/* CSS phân trang */
+.phan-trang{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.inner-phan-trang{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.inner-phan-trang a{
+    display: inline-block;
+    padding: 7px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0 5px;
+    transition: all 0.3s;
+}
+.inner-phan-trang .active{
+    background-color: #f38ee7;
+    color: #fff;
+}
+.inner-phan-trang a:hover{
+    transform: translateY(-5px);
+    background-color: #f38ee7;
+    color: #fff;
+}
+/* END CSS phân trang */

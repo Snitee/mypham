@@ -117,7 +117,7 @@
     //     if(isset($_SESSION['giohang']) && (is_array($_SESSION['giohang']))) {
 
     //     }
-    // }
+    // } 
     function showGiohang() {
         if(isset($_SESSION['giohang']) && (is_array($_SESSION['giohang']))) {
             $tong = 0;

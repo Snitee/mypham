@@ -5,12 +5,15 @@
     $con = new control();
 
     $pro_in_page = 9;
-    $page = $_GET['page'];
-    // $pro_in_page = 9;
-    // $page = 1;
-    $ofset = ($page - 1 ) * $pro_in_page;
-    // sql này là gì dị
-    $sql = "SELECT * FROM sanpham ORDER BY idsanpham ASC LIMIT  $pro_in_page  OFFSET $ofset ";
+    // Nếu tồn tại biến $_GET['page'] thì gán giá trị bằng biến $page
+    if(isset ($_GET['page'])){
+        $page = $_GET['page'];
+    } else {
+        $page = 1;
+    }
+
+    $start = ($page - 1 ) * $pro_in_page;
+    $sql = "SELECT * FROM sanpham LIMIT   $start, $pro_in_page ";
     $result = mysqli_query($conn , $sql );
 
     $allproducts = $con -> getProduct();
@@ -116,10 +119,20 @@
                 }
             ?>
 
-            <?php include 'phantrang.php'   ?>
+          
         </div>
     </div>    
 </div>
-
+<div class="phan-trang">
+    <div class="inner-phan-trang">
+    <?php 
+            for( $i = 1 ; $i <$totalPages ; $i++ ){
+        ?>
+                <a href="?page=<?php echo $i?>" <?php if($page == $i){echo "class='active'";} ?>><?php echo $i?></a>
+        <?php
+            }
+        ?>
+    </div>
+</div>
 </body>
 </html>
