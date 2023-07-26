@@ -1,0 +1,9 @@
+.inforbill {
+    display: flex;
+    flex-direction: column;
+}
+
+.inforbill .box-inf {
+    display: flex;
+    flex-direction: row;
+}
